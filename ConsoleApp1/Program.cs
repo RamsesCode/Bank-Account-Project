@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
-using System.Transactions;
 
 
 class BankAccount
@@ -80,6 +78,32 @@ foreach (var transaction in Transactions)
         }
     }
 }
+
+
+
+
+
+//Class for the program 
+
+class Program
+{
+    static void Main()   //main
+    { 
+        try
+        {   // test casese for the withdrawal
+            BankAccount account = new BankAccount("John Doe", 500);
+            account.Deposit(200);
+            account.Withdraw(100);
+            account.Withdraw(900);          // Should fail due to insufficient funds
+            account.PrintAccountSummary();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+    }
+}
+
     
 
 
@@ -95,4 +119,3 @@ foreach (var transaction in Transactions)
 
 
 
-}

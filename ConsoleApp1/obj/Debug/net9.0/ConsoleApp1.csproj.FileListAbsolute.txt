@@ -1,0 +1,5 @@
+/Users/ramses/Documents/Spring 2025 Classes/HW 350H/Bank Account Project/ConsoleApp1/obj/Debug/net9.0/ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ramses/Documents/Spring 2025 Classes/HW 350H/Bank Account Project/ConsoleApp1/obj/Debug/net9.0/ConsoleApp1.AssemblyInfoInputs.cache
+/Users/ramses/Documents/Spring 2025 Classes/HW 350H/Bank Account Project/ConsoleApp1/obj/Debug/net9.0/ConsoleApp1.AssemblyInfo.cs
+/Users/ramses/Documents/Spring 2025 Classes/HW 350H/Bank Account Project/ConsoleApp1/obj/Debug/net9.0/ConsoleApp1.csproj.CoreCompileInputs.cache
+/Users/ramses/Documents/Spring 2025 Classes/HW 350H/Bank Account Project/ConsoleApp1/obj/Debug/net9.0/ConsoleApp1.sourcelink.json
