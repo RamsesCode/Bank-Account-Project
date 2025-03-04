@@ -13,52 +13,51 @@ class BankAccount
 
     // Private 
 
-    private string int _accountCounter = 1000;
+    private static int _accountCounter = 1000;
 
 
     // initializing the constructor 
 
-    public BankAccount (string customerName, decimal initalBalance)
+    public BankAccount (string customerName, decimal initialBalance)
     {
-        if (initalBalance < 0)
-    {
-        throw new ArgumentException("Initial Balance is invalid or can not be negative");
+        if (initialBalance < 0)
+        {
+            throw new ArgumentException("Initial Balance is invalid or can not be negative");
+        }
 
-    }
-
-    AccountId = ++_accountCounter;
-    CustomerName = customerName;
-    Balance = initalBalance;
-    Transactions = new List<string> ($ "Account created with initial balance: {Balance:C}");
-
+        AccountId = ++_accountCounter;
+        CustomerName = customerName;
+        Balance = initialBalance;
+        Transactions = new List<string> { $"Account created with initial balance: {Balance:C}"};
     }
 
     // implenting a method for any cases of a deposit 
 
-    public void Deposit (Decimal amount){
-        if (amount < 0){
+    public void Deposit (decimal amount){
+        if (amount <= 0){
             throw new ArgumentException("Invalid deposit amount");
         }
 
         Balance += amount;
-        Transactions.Add($ "Deposited: {amount:C}, New Balance: {Balance:C}");
+        Transactions.Add($"Deposited: {amount:C}, New Balance: {Balance:C}");
     }
 
 
     // implementing a withdraw method for any cases that the customer wants to withdraw money from bank account
 
     public bool Withdraw (decimal amount){
-        if (amount < 0){
-            throw new ArgumentException("Invalid Withdraw amount");
+        if (amount <= 0){
+            throw new ArgumentException("Invalid withdrawal amount");
         }
 
         if (amount > Balance){
-            Transactions.Add ($ "Withdrawal of {amount:C} failed. Insufficient funds.");
+            Transactions.Add($"Withdrawal of {amount:C} failed. Insufficient funds.");
+            Console.WriteLine($"Withdrawal of {amount:C} failed. Insufficient funds.");
             return false;
         }
 
         Balance -= amount;
-        Transactions.Add($ "Withdrew: {amount:C}, New Balance: {Balance:C}");
+        Transactions.Add($"Withdrew: {amount:C}, New Balance: {Balance:C}");
         return true;
     }
 
@@ -67,18 +66,14 @@ class BankAccount
 
     public void PrintAccountSummary(){
         Console.WriteLine($"Account ID: {AccountId}, Customer: {CustomerName}, Balance: {Balance:C}");
-
-
         Console.WriteLine("Transaction History:");
 
-foreach (var transaction in Transactions)
-
-         {
-               Console.WriteLine(transaction);
+        foreach (var transaction in Transactions)
+        {
+            Console.WriteLine(transaction);
         }
     }
 }
-
 
 
 
@@ -91,7 +86,7 @@ class Program
     { 
         try
         {   // test casese for the withdrawal
-            BankAccount account = new BankAccount("John Doe", 500);
+            BankAccount account = new BankAccount("BMCC Student", 500);
             account.Deposit(200);
             account.Withdraw(100);
             account.Withdraw(900);          // Should fail due to insufficient funds
@@ -103,19 +98,3 @@ class Program
         }
     }
 }
-
-    
-
-//Must re-examine compiler is showing many errors in the code 
-
-
-
-
-
-
-
-
-
-
-
-
