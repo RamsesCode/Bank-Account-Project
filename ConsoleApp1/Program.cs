@@ -1,6 +1,29 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System;
+using System.Collections.Generic;
+
+
+class BankAccount
+{
+    // Properties of the class to go right here
+
+    
 
 
 
-// Testing for repository connection
+
+
+
+    // initializing the constructor 
+
+
+
+
+
+
+
+
+
+
+
+
+}
