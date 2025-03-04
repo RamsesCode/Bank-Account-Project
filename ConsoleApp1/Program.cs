@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Transactions;
 
 
 class BankAccount
@@ -32,6 +33,17 @@ class BankAccount
     Balance = initalBalance;
     Transactions = new List<string> ($ "Account created with initial balance: {Balance:C}");
 
+    }
+
+    // implenting a method for any cases of a deposit 
+
+    public void Deposit (Decimal amount){
+        if (amount < 0){
+            throw new ArgumentException("Deposit cannot be a negative number");
+        }
+
+        Balance += amount;
+        Transactions.Add($ "Deposited: {amount:C}, New Balance: {Balance:C}");
     }
 
 
