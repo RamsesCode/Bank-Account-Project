@@ -39,12 +39,32 @@ class BankAccount
 
     public void Deposit (Decimal amount){
         if (amount < 0){
-            throw new ArgumentException("Deposit cannot be a negative number");
+            throw new ArgumentException("Invalid deposit amount");
         }
 
         Balance += amount;
         Transactions.Add($ "Deposited: {amount:C}, New Balance: {Balance:C}");
     }
+
+
+    // implementing a withdraw method for any cases that the customer wants to withdraw money from bank account
+
+    public bool Withdraw (decimal amount){
+        if (amount < 0){
+            throw new ArgumentException("Invalid Withdraw amount");
+        }
+
+        if (amount > Balance){
+            Transactions.Add ($ "Withdrawal of {amount:C} failed. Insufficient funds.");
+            return false;
+        }
+
+        Balance -= amount;
+        Transactions.Add($ "Withdrew: {amount:C}, New Balance: {Balance:C}");
+        return true;
+    }
+
+    
 
 
 
