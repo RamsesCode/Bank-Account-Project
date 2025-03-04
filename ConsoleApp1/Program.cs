@@ -64,7 +64,25 @@ class BankAccount
         return true;
     }
 
+
+    // This will be the section for Account Summary, it should print out the info for the customer
+
+    public void PrintAccountSummary(){
+        Console.WriteLine($"Account ID: {AccountId}, Customer: {CustomerName}, Balance: {Balance:C}");
+
+
+        Console.WriteLine("Transaction History:");
+
+foreach (var transaction in Transactions)
+
+         {
+               Console.WriteLine(transaction);
+        }
+    }
+}
     
+
+
 
 
 
